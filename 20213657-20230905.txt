@@ -1,0 +1,135 @@
+    1   ls
+    2  ls
+    3  ls
+    4  ls
+    5  cd/
+    6  ls
+    7  pwd
+    8  ls
+    9  pwd
+   10  ls
+   11  cd
+   12  ls
+   13  ls
+   14  cd /
+   15  ls
+   16  cd/d/Git
+   17  pwd
+   18  history
+   19  cd d:\Git
+   20  pwd
+   21  ls
+   22  mkdir wu
+   23  cp -r picture/*wu
+   24  cd /..
+   25  cd /c
+   26  cd Users/桌面
+   27  cd 桌面
+   28  cd deskTop
+   29  cd /..
+   30  cd deskTop
+   31  cd /c/Users/九江王子/Desktop
+   32  cp -r 01.jpg/*d/Git/wu
+   33  cp 01.jpg
+   34  cp 01
+   35  pwd
+   36  cp -r 01/*d\Git\wu
+   37  ls
+   38  cd d/Git
+   39  cd /..
+   40  cd d/Git
+   41  cp 01.jpg/wu
+   42  cp 01.jpg/d/Git/wu
+   43  cp 01.jpg/wu
+   44  ls
+   45  cp -r 01.jpg/wu
+   46  cd c:/user/Desktop
+   47  cd c/Users/九江王子/Desktop
+   48  cd /..
+   49  cd c/Users/九江王子/Desktop
+   50  ls
+   51  ls -d/Git
+   52  cd/..
+   53  cd d/Git
+   54  cd /..
+   55  cd d/Git
+   56  cp 01.jpg
+   57  cp 01_path
+   58  cp 01.
+   59  cp 01_path.
+   60  cd wu
+   61  cp 01
+   62  cp c/User/九江王子/Desktop.01
+   63  cd
+   64  cd c/Users/九江王子/Desktop
+   65  cd c/Users/九江王子/Desktop
+   66  cd /..
+   67  cd c/Users/九江王子/Desktop
+   68  cp 01.jpg
+   69  cp 01.jpg d/Git/wu
+   70  cp 01.jpg /d/Git/wu
+   71  history
+   72  history >git.txt
+   73  clear
+   74  cd /..
+   75  cd d/Git
+   76  ls
+   77  touch picture
+   78  mkdir picture
+   79  mkdir picture
+   80  cp wu/01.jpg /picture
+   81  cat wu
+   82  cp wu.01.jpg /picture
+   83  cp wu /picture
+   84  cd wu
+   85  cp 01.jpg /d/Git/picture
+   86  ls
+   87  cd /..
+   88  ls
+   89  cd c/Users/九江王子/Desktop
+   90  ls
+   91  cat git.txt
+   92  history
+   93  less git.txt
+   94  cd /
+   95  history
+   96  clear
+   97  cd d/Git
+   98  vim wu
+   99  cd /
+  100  history
+  101  history > git.txt
+  102  cd c/Users/九江王子/Desktop
+  103  history > git.txt
+  104  cd /
+  105  cd d/Git
+  106  rm picture/01.jpg
+  107  ls -picture
+  108  ls -r picture
+  109  rmdir picture
+  110  ls
+  111  mkdir picture
+  112  ls
+  113  cp wu/picture
+  114  cp wu /d/Git/picture
+  115  ls
+  116  history
+  117  history > 20213657-20230905.txt
+  118  cd /..
+  119  cd c/Users/九江王子/Desktop
+  120  history > 20213657-20230905.txt
+  121  cd/
+  122  cd /
+  123  whoami.exe
+  124  ls /c
+  125  ls /d
+  126  ls /d -l
+  127  ls /d -lh
+  128  history
+  129  mkdir wyq
+  130  cd /wyq
+  131  ls
+  132  mkdir homework
+  133  ls
+  134  touch 20216357.txt
+  135  history > 20213657.txt
