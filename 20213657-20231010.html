@@ -26,7 +26,7 @@
     document.getElementById("play").onclick=function(){
         myvideo.pause();
         i= i % mp4Files.length;
-        myvideo.src="videoMP4/"+mp4Files[i];
+        myvideo.src="videoMp4/"+mp4Files[i];
         myvideo.play();
         i++;
     };
@@ -35,7 +35,7 @@
     };
     document.getElementById("next").onclick=function(){
         i= i % mp4Files.length;
-        myvideo.src="videoMP4/"+mp4Files[i];
+        myvideo.src="videoMp4/"+mp4Files[i];
         myvideo.play();
         i++;
     };
