@@ -4,77 +4,41 @@
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<style>
-    input{
-        width:3em;
-    }
-</style>
 <body>
 <video controls id="myvideo"></video>
 <div>
     <button id="play">play</button>
     <button id="pause">pause</button>
     <button id="next">next</button>
-    Time:<input type="text" id="currentTime">
-    选集:<input type="text" id="xuanji">
 </div>
 
 <script>
-    var mp4Files = ["2013东西方2马的交锋.mp4",
+    var mp4Files =["2013东西方2马的交锋.mp4",
         "funDogs.mp4",
         "逗八哥狗.mp4",
         "农民吹牛.mp4",
         "上瘾.mp4",
-        "世界冠军江西弃婴.mp4"];
-    var myvideo = document.getElementById("myvideo");
-    myvideo.src = "videoMp4/" + mp4Files[0];
-    var i = 0;
-    myvideo.addEventListener("timeupdate", function() {
-        var currentTimeDom = document.getElementById("currentTime");
-        currentTimeDom.value = Math.floor(myvideo.currentTime);
-    });
-    document.getElementById("play").onclick = function() {
-        if(!parseInt(xuanjiDom.value)){
-            xuanjiDom.value=1;
-            console.log("自动播放第一集。")
-        }
-        if(xuanjiDom.value<=6){
-            myvideo.src = "videoMp4/" + mp4Files[xuanjiDom.value-1];
-        }
-        else{
-            myvideo.src = "videoMp4/" + mp4Files[0];
-            console.log("没有此集，自动播放第一集。")
-        }
-        myvideo.currentTime=currentTimeDom.value;
-        if(!parseInt(currentTimeDom.value)){
-            currentTimeDom.value=0;
-            console.log("你搞什么飞机！");
-        }
-        myvideo.play();
-    };
+        "世界冠军江西弃婴.mp4"]
+    var myvideo=document.getElementById("myvideo");
+    myvideo.src="";
+    var i=0;
 
-    document.getElementById("pause").onclick = function() {
+    document.getElementById("play").onclick=function(){
+        myvideo.pause();
+        i= i % mp4Files.length;
+        myvideo.src="videoMP4/"+mp4Files[i];
+        myvideo.play();
+        i++;
+    };
+    document.getElementById("pause").onclick=function(){
         myvideo.pause();
     };
-
-    document.getElementById("next").onclick = function() {
-        var xuanjiValue = parseInt(xuanjiDom.value);
-
-        if (!parseInt(xuanjiValue) || xuanjiValue < 1 || xuanjiValue > 5) {
-            xuanjiValue = 1;
-        } else {
-            xuanjiValue++;
-            if (xuanjiValue > 6) {
-                xuanjiValue = 1;
-            }
-        }
-
-        myvideo.src = "videoMp4/" + mp4Files[xuanjiValue - 1];
-        xuanjiDom.value = xuanjiValue;
+    document.getElementById("next").onclick=function(){
+        i= i % mp4Files.length;
+        myvideo.src="videoMP4/"+mp4Files[i];
         myvideo.play();
+        i++;
     };
-    var currentTimeDom = document.getElementById("currentTime");
-    var xuanjiDom = document.getElementById("xuanji");
 </script>
 </body>
 </html>
