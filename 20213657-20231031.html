@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        width: 3em;
+    }
+
+    div#logo {
+        right: 0;
+        top: 0;
+        font-size: 2em;
+        position: absolute;
+        padding: 6px 8px;
+        background-color: red;
+        color: white;
+    }
+
+    div#showTime {
+        left: 0;
+        top: 0;
+        font-size: 2em;
+        position: absolute;
+        padding: 6px 8px;
+        background-color: blue;
+        color: white;
+    }
+</style>
+<body>
+<div id="showTime">
+    0s/277s
+</div>
+<div id="logo">
+    NO.1/6
+</div>
+<video controls id="myvideo"></video>
+<div id="duration">
+
+</div>
+<div>
+    <button id="play">play</button>
+    <button id="pause">pause</button>
+    <button id="next">next</button>
+    选集:<input type="text" id="xuanji">
+</div>
+
+<script>
+    var mp4Files = ["2013东西方2马的交锋.mp4",
+        "funDogs.mp4",
+        "逗八哥狗.mp4",
+        "农民吹牛.mp4",
+        "上瘾.mp4",
+        "世界冠军江西弃婴.mp4"];
+    var myvideo = document.getElementById("myvideo");
+    myvideo.src = "videoMp4/" + mp4Files[0];
+    var i = 0;
+    var browserWidth = document.body.clientWidth;
+    myvideo.style.width = browserWidth + 'px';
+    var xuanjiDom = document.getElementById("xuanji");
+    var showTimeDom = document.getElementById("showTime");
+    var logoDom = document.getElementById("logo");
+    logoDom.textContent = 'NO.' + (i + 1) + '/' + '共' + mp4Files.length + '集';
+    document.onkeydown = function (e) {
+        console.log("you type :" + e.key);
+    };
+    window.setInterval(function () {
+        var showTimeString = parseInt(myvideo.currentTime) + 's';
+        showTimeString += '/' + parseInt(myvideo.duration) + 's';
+        showTimeDom.textContent = showTimeString;
+    }, 1000);
+    document.getElementById("play").onclick = function () {
+        if (!parseInt(xuanjiDom.value)) {
+            xuanjiDom.value = 1;
+            console.log("自动播放第一集。");
+        }
+        if (xuanjiDom.value <= 6) {
+            myvideo.src = "videoMp4/" + mp4Files[xuanjiDom.value - 1];
+        } else {
+            myvideo.src = "videoMp4/" + mp4Files[0];
+            console.log("没有此集，自动播放第一集。");
+        }
+        myvideo.play();
+    };
+
+    document.getElementById("pause").onclick = function () {
+        myvideo.pause();
+    };
+
+    document.getElementById("next").onclick = function () {
+        var xuanjiValue = parseInt(xuanjiDom.value);
+
+        if (!isNaN(xuanjiValue) && xuanjiValue >= 1 && xuanjiValue <= 6) {
+            xuanjiValue++;
+            if (xuanjiValue > 6) {
+                xuanjiValue = 1;
+            }
+        } else {
+            xuanjiValue = 1;
+        }
+
+        myvideo.src = "videoMp4/" + mp4Files[xuanjiValue - 1];
+        xuanjiDom.value = xuanjiValue;
+        logoDom.textContent = 'NO.' + xuanjiValue + '/' + '共' + mp4Files.length + '集';
+        myvideo.play();
+    };
+    var durationDom = [];
+    for (let i = 0; i < 9; i++) {
+        let tempDom = document.createElement('input');
+        tempDom.type = 'button';
+        tempDom.value += 'No.' + (i + 1);
+        durationDom[i] = tempDom;
+        document.getElementById('duration').appendChild(durationDom[i]);
+    }
+    for (let i = 0; i < 9; i++) {
+        durationDom[i].onclick = function () {
+            myvideo.currentTime = i * myvideo.duration / 9;
+        };
+    }
+</script>
+</body>
+</html>
